@@ -4,7 +4,6 @@ from geopy.geocoders import Nominatim
 import time
  
 geolocator = Nominatim()
-fichier = open("mapper-result.txt", "a")
 with open("out-parse.txt") as f:
 	for line in f:
 		data = line.strip().split("\t")
@@ -20,6 +19,4 @@ with open("out-parse.txt") as f:
 			#state = details['state']
 			#destination = ', '.join((street, city, state, country))
 			key = "{0};{1}".format(date2, street)
-			fichier.write("{0}\t{1}\n".format(key, speed))
-			
-fichier.close()
+			print("{0}\t{1}\n".format(key, speed))
